@@ -16,7 +16,7 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   title: "StrikeZone Martial Arts — Building Fighters. Building Character.",
   description:
-    "Boxing and Muay Thai academy in Machang Bubok, Bukit Mertajam, Penang. Structured training built on discipline, development and dedication.",
+    "Boxing, Muay Thai and Taekwondo academy in Machang Bubok, Bukit Mertajam, Penang. Structured training built on discipline, development and dedication.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

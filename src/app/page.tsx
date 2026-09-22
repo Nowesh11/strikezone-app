@@ -36,7 +36,7 @@ export default function Home() {
         <SiteNavbar items={navItems} activeHref="#home" ctaLabel="Start Training" ctaHref="#contact" />
         <MinimalistHero
           eyebrow="Est. 2023 · Penang, Malaysia"
-          mainText="Structured Boxing and Muay Thai training that builds real skill, fitness and mental resilience — whether it's your first class or your next fight."
+          mainText="Structured Boxing, Muay Thai and Taekwondo training that builds real skill, fitness and mental resilience — whether it's your first class or your next fight."
           primaryCta={{ label: "Start Training", href: "#contact" }}
           secondaryCta={{ label: "Our Story", href: "#about" }}
           imageSrc="/hero-strike-cutout.png"
@@ -47,7 +47,7 @@ export default function Home() {
           stats={[
             { value: "16+", label: "Yrs coaching" },
             { value: "3", label: "Expert coaches" },
-            { value: "2", label: "Disciplines" },
+            { value: "4", label: "Disciplines" },
           ]}
           socialLinks={socialLinks}
           motto="Discipline • Development • Dedication"

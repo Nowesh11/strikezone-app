@@ -152,7 +152,7 @@ export const MinimalistHero = ({
             transition={{ duration: 0.5, delay: 1.4, ease }}
             className="absolute bottom-[16%] left-0 z-20 rounded-full bg-flare px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.2em] text-charcoal sm:left-4"
           >
-            Boxing · Muay Thai
+            Boxing · Muay Thai · Taekwondo
           </motion.span>
         </div>
 

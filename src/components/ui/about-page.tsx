@@ -16,7 +16,7 @@ interface AboutPageProps {
 const defaultAchievements = [
   { label: "Years combined coaching", value: "16+" },
   { label: "Expert coaches", value: "3" },
-  { label: "Striking disciplines", value: "2" },
+  { label: "Striking disciplines", value: "3" },
   { label: "Year founded", value: "2023" },
 ]
 

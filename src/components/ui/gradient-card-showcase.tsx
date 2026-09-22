@@ -2,17 +2,18 @@
 
 import { motion, type Variants } from "framer-motion";
 import { ArrowUpRight, Brain, Dumbbell, HandFist, HeartPulse, Sprout, Trophy, Zap, type LucideIcon } from "lucide-react";
+import { BeltIcon } from "@/components/icons";
 import { cn } from "@/lib/utils";
 
 interface Discipline {
   num: string;
   /** Matches a discipline option in the contact form so the CTA can preselect it. */
-  value: "boxing" | "muay-thai" | "fitness";
+  value: "boxing" | "muay-thai" | "taekwondo" | "fitness";
   title: string;
   tagline: string;
   desc: string;
   items: string[];
-  icon: LucideIcon;
+  icon: LucideIcon | typeof BeltIcon;
   /** Resting panel — gold family only; the pink→orange brand gradient is reserved for the hover glow. */
   gradientFrom: string;
   gradientTo: string;
@@ -60,6 +61,26 @@ const disciplines: Discipline[] = [
   },
   {
     num: "03",
+    value: "taekwondo",
+    title: "Taekwondo",
+    tagline: "The way of the foot and fist",
+    desc: "Dynamic kicks, sharp technique and balance — a striking art built on control, flexibility and respect.",
+    items: [
+      "Stances & footwork",
+      "Kicking techniques",
+      "Blocks & strikes",
+      "Forms (poomsae)",
+      "Sparring drills",
+      "Flexibility",
+      "Balance & coordination",
+      "Discipline & etiquette",
+    ],
+    icon: BeltIcon,
+    gradientFrom: "#e8cf9c",
+    gradientTo: "#8a6a3a",
+  },
+  {
+    num: "04",
     value: "fitness",
     title: "Martial Arts & Fitness",
     tagline: "Body & mind",
@@ -106,7 +127,7 @@ function DisciplineCard({ d, index }: { d: Discipline; index: number }) {
       variants={fadeUp}
       custom={index}
       {...inView}
-      className="group relative w-full max-w-[400px] py-10 transition-all duration-500"
+      className="group relative w-full max-w-[480px] py-10 transition-all duration-500"
     >
       {/* Skewed gold panel */}
       <span aria-hidden className={panelClass} style={{ background: `linear-gradient(315deg, ${d.gradientFrom}, ${d.gradientTo})` }} />
@@ -190,7 +211,7 @@ export default function SkewCards() {
               id="disciplines-heading"
               className="mt-8 font-display text-5xl leading-[0.95] tracking-wide text-bone sm:text-6xl lg:text-7xl"
             >
-              Three disciplines. <span className="text-gold">One standard.</span>
+              Four disciplines. <span className="text-gold">One standard.</span>
             </h2>
           </motion.div>
           <motion.p variants={fadeUp} custom={1} {...inView} className="max-w-md text-[15px] leading-relaxed text-stone">
@@ -200,7 +221,7 @@ export default function SkewCards() {
         </div>
 
         {/* Cards */}
-        <div className="mt-12 grid justify-items-center gap-6 md:mt-16 md:grid-cols-2 xl:grid-cols-3 xl:gap-8">
+        <div className="mt-12 grid justify-items-center gap-6 md:mt-16 md:grid-cols-2 md:gap-x-10 xl:gap-x-16">
           {disciplines.map((d, i) => (
             <DisciplineCard key={d.num} d={d} index={i} />
           ))}

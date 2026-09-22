@@ -302,7 +302,7 @@ export function ContactSection() {
               </span>
               <span>
                 <span className="block text-[11px] font-semibold uppercase tracking-[0.22em] text-stone">Classes</span>
-                <span className="mt-0.5 block text-sm font-medium text-bone">Boxing · Muay Thai · Martial Arts &amp; Fitness</span>
+                <span className="mt-0.5 block text-sm font-medium text-bone">Boxing · Muay Thai · Taekwondo · Martial Arts &amp; Fitness</span>
               </span>
             </li>
           </ul>
