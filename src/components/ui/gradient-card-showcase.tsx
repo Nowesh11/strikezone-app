@@ -82,7 +82,7 @@ const disciplines: Discipline[] = [
   {
     num: "04",
     value: "fitness",
-    title: "Martial Arts & Fitness",
+    title: "Private Martial Arts & Fitness",
     tagline: "Body & mind",
     desc: "Structured physical development that builds the athlete behind the technique.",
     items: [
