@@ -71,8 +71,8 @@ export function SiteFooter({ navItems }: { navItems: NavItem[] }) {
         <div className="grid gap-12 py-16 sm:grid-cols-2 lg:grid-cols-[1.4fr_0.8fr_1fr_1.3fr] lg:gap-10">
           {/* Brand */}
           <div>
-            <a href="#home" aria-label="StrikeZone Martial Arts — back to top">
-              <BrandLockup />
+            <a href="#home" aria-label="StrikeZone Martial Arts — back to top" className="inline-block">
+              <BrandLockup className="w-52 md:w-56" />
             </a>
             <p className="mt-6 max-w-xs text-sm leading-relaxed text-stone">
               Building fighters. Building character. A martial arts academy in Bukit Mertajam, Penang — founded 2023.

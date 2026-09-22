@@ -69,8 +69,8 @@ export function SiteNavbar({ items, activeHref = "#home", ctaLabel, ctaHref }: S
         className="mx-auto flex w-full max-w-7xl items-center justify-between px-6 md:px-12"
         aria-label="Primary"
       >
-        <a href="#home" aria-label="StrikeZone Martial Arts — home">
-          <BrandLockup />
+        <a href="#home" aria-label="StrikeZone Martial Arts — home" className="shrink-0">
+          <BrandLockup preload className={cn("transition-all duration-500", scrolled ? "w-36 md:w-40" : "w-40 md:w-48")} />
         </a>
 
         <ul className="hidden items-center gap-6 lg:flex xl:gap-9">
@@ -134,7 +134,7 @@ export function SiteNavbar({ items, activeHref = "#home", ctaLabel, ctaHref }: S
             className="fixed inset-0 z-[60] flex h-dvh flex-col bg-charcoal px-6 py-5 lg:hidden"
           >
             <div className="flex items-center justify-between">
-              <BrandLockup />
+              <BrandLockup className="w-40" />
               <button
                 type="button"
                 onClick={() => setOpen(false)}
