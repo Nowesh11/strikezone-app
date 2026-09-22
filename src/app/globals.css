@@ -1,26 +1,154 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-manrope);
+  --font-display: var(--font-bebas);
+  --font-heading: var(--font-bebas);
+
+  /* StrikeZone brand palette */
+  --color-charcoal: var(--sz-charcoal);
+  --color-charcoal-2: var(--sz-charcoal-2);
+  --color-bone: var(--sz-bone);
+  --color-gold: var(--sz-gold);
+  --color-flare: var(--sz-flare);
+  --color-magenta: var(--sz-magenta);
+  --color-stone: var(--sz-stone);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  /* Brand */
+  --sz-charcoal: #1a1a1a;   /* primary background */
+  --sz-charcoal-2: #2e2e2e; /* cards / sections */
+  --sz-bone: #f5f0e8;       /* primary text */
+  --sz-gold: #c9a86a;       /* headings, borders, icons */
+  --sz-flare: #f5a623;      /* badges / tags */
+  --sz-magenta: #e0217d;
+  --sz-stone: #9c9691;      /* muted text */
+  --sz-gradient: linear-gradient(135deg, #e0217d 0%, #f5a623 100%);
+
+  /* shadcn tokens mapped to the brand */
+  --background: var(--sz-charcoal);
+  --foreground: var(--sz-bone);
+  --card: var(--sz-charcoal-2);
+  --card-foreground: var(--sz-bone);
+  --popover: var(--sz-charcoal-2);
+  --popover-foreground: var(--sz-bone);
+  --primary: var(--sz-gold);
+  --primary-foreground: var(--sz-charcoal);
+  --secondary: var(--sz-charcoal-2);
+  --secondary-foreground: var(--sz-bone);
+  --muted: var(--sz-charcoal-2);
+  --muted-foreground: var(--sz-stone);
+  --accent: var(--sz-charcoal-2);
+  --accent-foreground: var(--sz-bone);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: rgb(201 168 106 / 0.18);
+  --input: rgb(245 240 232 / 0.12);
+  --ring: var(--sz-gold);
+  --chart-1: var(--sz-gold);
+  --chart-2: var(--sz-flare);
+  --chart-3: var(--sz-magenta);
+  --chart-4: var(--sz-stone);
+  --chart-5: var(--sz-charcoal-2);
+  --radius: 0.625rem;
+  --sidebar: var(--sz-charcoal-2);
+  --sidebar-foreground: var(--sz-bone);
+  --sidebar-primary: var(--sz-gold);
+  --sidebar-primary-foreground: var(--sz-charcoal);
+  --sidebar-accent: var(--sz-charcoal);
+  --sidebar-accent-foreground: var(--sz-bone);
+  --sidebar-border: rgb(201 168 106 / 0.18);
+  --sidebar-ring: var(--sz-gold);
+  color-scheme: dark;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+    scroll-behavior: smooth;
+    scroll-padding-top: 4.5rem;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Gradient accent — reserved for CTAs, active nav underline and hover glows */
+@utility bg-strike-gradient {
+  background-image: var(--sz-gradient);
+}
+
+@utility text-outline-gold {
+  color: transparent;
+  -webkit-text-stroke: 1px rgb(201 168 106 / 0.12);
+}
+
+/* Floating glass blobs used by the discipline cards */
+@keyframes blob {
+  0%,
+  100% {
+    transform: translateY(10px);
+  }
+  50% {
+    transform: translate(-10px);
+  }
+}
+
+@utility animate-blob {
+  animation: blob 2s ease-in-out infinite;
+}
+
+@utility animation-delay-1000 {
+  animation-delay: -1s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-blob {
+    animation: none;
+  }
 }
