@@ -69,7 +69,7 @@ const defaultItems: CoachItem[] = [
 ];
 
 /* Mask shapes on a 500×500 canvas. Every piece carries the `path` class so the
-   timeline can scale them in individually. */
+   timeline can scale them in individualy. */
 function ClipShapes({ shape }: { shape: CoachItem["shape"] }) {
   if (shape === "strike") {
     // Five slanted "strike" bars of varying length
