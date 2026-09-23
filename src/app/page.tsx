@@ -44,6 +44,7 @@ export default function Home() {
           imageWidth={1105}
           imageHeight={1280}
           overlayText={{ part1: ["Building", "Fighters."], part2: ["Building", "Character."] }}
+          headingContext="StrikeZone Martial Arts — boxing, Muay Thai and Taekwondo classes in Machang Bubok, Bukit Mertajam, Penang"
           stats={[
             { value: "16+", label: "Yrs coaching" },
             { value: "3", label: "Expert coaches" },

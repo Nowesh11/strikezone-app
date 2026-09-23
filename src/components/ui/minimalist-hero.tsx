@@ -16,6 +16,8 @@ interface MinimalistHeroProps {
   imageWidth: number;
   imageHeight: number;
   overlayText: { part1: string[]; part2: string[] };
+  /** Plain-language version of the stylised headline, for screen readers and crawlers. */
+  headingContext?: string;
   stats: { value: string; label: string }[];
   socialLinks: { icon: ReactNode; href: string; label: string }[];
   motto: string;
@@ -47,6 +49,7 @@ export const MinimalistHero = ({
   imageWidth,
   imageHeight,
   overlayText,
+  headingContext,
   stats,
   socialLinks,
   motto,
@@ -165,6 +168,9 @@ export const MinimalistHero = ({
         >
           {/* Each part is one line on mobile/tablet, and splits into stacked words on desktop */}
           <h1 className="font-display text-[clamp(2.25rem,10.5vw,4.5rem)] leading-[0.95] tracking-wide text-bone lg:text-[5rem] lg:leading-[0.86] xl:text-[6.25rem] 2xl:text-[7.5rem]">
+            {/* The stylised slogan alone says nothing about what this place is
+                or where it is, so the accessible heading leads with that. */}
+            {headingContext && <span className="sr-only">{headingContext}. </span>}
             {[overlayText.part1, overlayText.part2].map((lines, p) => (
               <span key={p} className={cn("block whitespace-nowrap lg:whitespace-normal", p === 1 && "text-gold")}>
                 {lines.map((line, i) => (
