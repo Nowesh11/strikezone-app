@@ -42,7 +42,7 @@ const defaultItems: CoachItem[] = [
   {
     num: "02",
     nameLines: ["Ng Zhang", "Zhen"],
-    fullName: "Ng Zhang Zhen",
+    fullName: "Ng Zhang Zheng",
     role: "Boxing Coach",
     years: 6,
     bio: "Brings a dedicated boxing perspective — movement, footwork, punching technique, combinations and defence, built on timing, coordination and discipline.",
